@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>AuroraOS</title>
+
+  <!-- CSS 파일 연결 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================
+       Welcome Screen
+  ====================================== -->
+
+  <section id="welcomeScreen">
+
+    <div class="welcome-window">
+
+      <div class="logo">
+        ✦
+      </div>
+
+      <h1>AuroraOS</h1>
+
+      <p
+    class="welcome-text"
+    id="bootStatus"
+>
+    Initializing AuroraOS...
+</p>
+
+<div class="boot-bar">
+
+    <div
+        class="boot-progress"
+        id="bootProgress"
+    ></div>
+
+</div>
+
+<p
+    class="boot-percent"
+    id="bootPercent"
+>
+    0%
+</p>
+
+<button
+    class="enter-button"
+    id="enterDesktopButton"
+    type="button"
+    style="display:none;"
+>
+    Enter Desktop
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       Desktop Screen
+  ====================================== -->
+
+  <section id="desktop">
+
+    <!-- Top Bar -->
+
+    <header class="top-bar">
+
+      <button
+        class="os-button"
+        id="welcomeOpen"
+        type="button"
+      >
+        ✦ AuroraOS
+      </button>
+
+      <div class="top-center">
+        Welcome, User
+      </div>
+
+      <p id="timeElement">
+        Loading time...
+      </p>
+
+    </header>
+
+
+    <!-- Desktop Icons -->
+
+    <main class="desktop-icons">
+
+
+      <button
+        class="desktop-icon"
+         id="journalOpen"
+        type="button"
+>
+        <span class="icon-box">
+            📖
+        </span>
+
+        <span class="icon-name">
+            Aurora Journal
+        </span>
+        </button>
+
+
+
+
+      <button
+        class="desktop-icon"
+        id="settingsOpen"
+        type="button"
+        >
+        <span class="icon-box">
+            ⚙️
+        </span>
+
+        <span class="icon-name">
+            Settings
+        </span>
+        </button>
+
+      <button
+  class="desktop-icon"
+  id="weatherOpen"
+  type="button"
+>
+  <span class="icon-box">
+    🌤️
+  </span>
+
+  <span class="icon-name">
+    Weather
+  </span>
+</button>
+    </main>
+
+
+    <!-- =====================================
+         Draggable Welcome Window
+    ====================================== -->
+
+    <div
+      class="app-window"
+      id="welcomeWindow"
+    >
+
+      <!-- 창을 움직이는 손잡이 -->
+
+      <div
+        class="window-header"
+        id="welcomeWindowHeader"
+      >
+
+        <div class="window-title">
+          ✦ Aurora Welcome
+        </div>
+
+        <button
+          class="close-button"
+          id="welcomeClose"
+          type="button"
+          aria-label="Close welcome window"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- 창 내부 내용 -->
+
+      <div class="window-content">
+
+        <h2>Hello, User.</h2>
+
+        <p>
+          Welcome to your AuroraOS desktop.
+        </p>
+
+        <p>
+          Drag the top bar to move this window.
+        </p>
+
+        <p>
+          Select an application to get started.
+        </p>
+
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+
+
+<!-- =====================================
+     Settings App
+====================================== -->
+
+<div
+    class="app-window settings-window"
+    id="settingsWindow"
+>
+
+    <div
+        class="window-header"
+        id="settingsWindowHeader"
+    >
+
+        <div class="window-title">
+            ⚙️ Settings
+        </div>
+
+        <button
+            class="close-button"
+            id="settingsClose"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="settings-content">
+
+        <h2>Wallpaper</h2>
+
+        <button class="wallpaper-button" data-wallpaper="blue">
+            🌌 Aurora Blue
+        </button>
+
+        <button class="wallpaper-button" data-wallpaper="purple">
+            💜 Aurora Purple
+        </button>
+
+        <button class="wallpaper-button" data-wallpaper="midnight">
+            🌙 Midnight
+        </button>
+
+        <button class="wallpaper-button" data-wallpaper="sunset">
+            🌅 Sunset
+        </button>
+
+    </div>
+    <div class="resize-handle"></div>
+</div>
+
+    <!-- =====================================
+     Aurora Journal App
+====================================== -->
+
+<div
+  class="app-window journal-window"
+  id="journalWindow"
+>
+
+  <div
+    class="window-header"
+    id="journalWindowHeader"
+  >
+
+    <div class="window-title">
+      📖 Aurora Journal
+    </div>
+
+    <button
+      class="close-button"
+      id="journalClose"
+      type="button"
+      aria-label="Close Aurora Journal"
+    >
+      ×
+    </button>
+
+  </div>
+  
+  <div class="journal-content">
+
+    <aside class="journal-sidebar">
+
+      <button
+        class="journal-entry active-entry"
+        data-entry="welcome"
+        type="button"
+        >
+        <strong>Welcome</strong>
+        <span>July 2026</span>
+      </button>
+
+      <button
+        class="journal-entry"
+        data-entry="goals"
+        type="button"
+        >
+        <strong>My Goals</strong>
+        <span>July 2026</span>
+      </button>
+
+      <button
+        class="journal-entry"
+        data-entry="favorites"
+        type="button"
+        >
+        <strong>Favorite Things</strong>
+        <span>July 2026</span>
+      </button>
+
+    </aside>
+
+<article class="journal-page">
+
+  <p
+    class="journal-date"
+    id="journalDate"
+  >
+    July 2026
+  </p>
+
+  <h2 id="journalTitle">
+    Welcome, User.
+  </h2>
+
+  <div id="journalBody">
+
+    <p>
+      This is Aurora Journal, a quiet space for your thoughts,
+      ideas, and memories.
+    </p>
+
+    <blockquote>
+      Small ideas can become bright possibilities.
+    </blockquote>
+
+    <p>
+      Select an entry from the left side to read more.
+    </p>
+
+  </div>
+
+</article>
+
+  </div>
+  <div class="resize-handle"></div>
+</div>
+
+<!-- =====================================
+     Weather App
+====================================== -->
+
+<!-- =====================================
+     Weather App
+====================================== -->
+
+<div
+  class="app-window weather-window"
+  id="weatherWindow"
+>
+
+  <div
+    class="window-header"
+    id="weatherWindowHeader"
+  >
+    <div class="window-title">
+      🌤️ Weather
+    </div>
+
+    <button
+      class="close-button"
+      id="weatherClose"
+      type="button"
+      aria-label="Close Weather"
+    >
+      ×
+    </button>
+  </div>
+
+  <div class="weather-content">
+
+    <p class="weather-label">
+      Current location
+    </p>
+
+    <h2 id="weatherLocation">
+      Finding your location...
+    </h2>
+
+    <p
+      id="weatherDate"
+      class="weather-date"
+    >
+      Loading date...
+    </p>
+
+    <div
+      class="weather-icon"
+      id="weatherIcon"
+    >
+      🌤️
+    </div>
+
+    <p
+      class="weather-temperature"
+      id="weatherTemperature"
+    >
+      --°
+    </p>
+
+    <p
+      class="weather-description"
+      id="weatherDescription"
+    >
+      Loading current weather...
+    </p>
+
+    <!-- Current weather details -->
+
+    <div class="weather-details">
+
+      <div class="weather-detail">
+        <span>Feels like</span>
+        <strong id="weatherFeelsLike">--°</strong>
+      </div>
+
+      <div class="weather-detail">
+        <span>Humidity</span>
+        <strong id="weatherHumidity">--%</strong>
+      </div>
+
+      <div class="weather-detail">
+        <span>Wind</span>
+        <strong id="weatherWind">-- km/h</strong>
+      </div>
+
+    </div>
+
+    <!-- Sunrise and Sunset -->
+
+    <div class="sun-details">
+
+      <div class="sun-detail">
+        <span>🌅 Sunrise</span>
+        <strong id="weatherSunrise">--:--</strong>
+      </div>
+
+      <div class="sun-detail">
+        <span>🌇 Sunset</span>
+        <strong id="weatherSunset">--:--</strong>
+      </div>
+
+    </div>
+
+    <!-- Five-hour forecast -->
+
+    <div class="hourly-section">
+
+      <h3>Next 5 Hours</h3>
+
+      <div
+        class="hourly-forecast"
+        id="hourlyForecast"
+      >
+        Loading forecast...
+      </div>
+
+    </div>
+
+    <p
+      class="weather-updated"
+      id="weatherUpdated"
+    ></p>
+
+    <button
+      class="weather-refresh"
+      id="weatherRefresh"
+      type="button"
+    >
+      Refresh weather
+    </button>
+
+  </div>
+
+  <!-- 반드시 Weather 창 맨 마지막에 위치 -->
+
+  <div class="resize-handle"></div>
+
+</div>
+
+  </section>
+
+
+  <!-- JavaScript 파일 연결 -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
