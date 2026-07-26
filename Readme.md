@@ -84,7 +84,7 @@ All implementation, testing, customization, and final design decisions were comp
 
 ## 👤 Author
 
-**Ditto A.(d08835149-prog)**
+**Ditto A.(Minhae A.)(d08835149-prog)**
 
 GitHub: https://github.com/d08835149-prog
 
