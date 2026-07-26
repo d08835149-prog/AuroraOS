@@ -81,6 +81,259 @@ const weatherSunset =
 const hourlyForecast =
   document.querySelector("#hourlyForecast");
 
+const languageButtons =
+  document.querySelectorAll(".language-button");
+
+const translations = {
+  en: {
+    bootInitializing: "Initializing AuroraOS...",
+    enterDesktop: "Enter Desktop",
+    loadingTime: "Loading time...",
+    welcomeUser: "Welcome, User",
+
+    journal: "Aurora Journal",
+    settings: "Settings",
+    weather: "Weather",
+
+    welcomeWindowTitle: "✦ Aurora Welcome",
+    helloUser: "Hello, User.",
+    welcomeDesktop: "Welcome to your AuroraOS desktop.",
+    dragInstruction: "Drag the top bar to move this window.",
+    selectApplication: "Select an application to get started.",
+
+    settingsTitle: "⚙️ Settings",
+    wallpaper: "Wallpaper",
+    auroraBlue: "🌌 Aurora Blue",
+    auroraPurple: "💜 Aurora Purple",
+    midnight: "🌙 Midnight",
+    sunset: "🌅 Sunset",
+    language: "Language",
+
+    journalTitle: "📖 Aurora Journal",
+    welcome: "Welcome",
+    myGoals: "My Goals",
+    favoriteThings: "Favorite Things",
+    july2026: "July 2026",
+    journalWelcomeTitle: "Welcome, User.",
+    journalIntro:
+      "This is Aurora Journal, a quiet space for your thoughts, ideas, and memories.",
+    journalQuote:
+      "Small ideas can become bright possibilities.",
+    journalInstruction:
+      "Select an entry from the left side to read more.",
+
+    weatherTitle: "🌤️ Weather",
+    currentLocation: "Current location",
+    findingLocation: "Finding your location...",
+    loadingDate: "Loading date...",
+    loadingWeather: "Loading current weather...",
+    feelsLike: "Feels like",
+    humidity: "Humidity",
+    wind: "Wind",
+    sunrise: "🌅 Sunrise",
+    sunsetTime: "🌇 Sunset",
+    nextFiveHours: "Next 5 Hours",
+    loadingForecast: "Loading forecast...",
+    refreshWeather: "Refresh weather"
+  },
+
+  ko: {
+    bootInitializing: "AuroraOS를 시작하는 중...",
+    enterDesktop: "데스크톱으로 들어가기",
+    loadingTime: "시간 불러오는 중...",
+    welcomeUser: "환영합니다, User",
+
+    journal: "Aurora 일기장",
+    settings: "설정",
+    weather: "날씨",
+
+    welcomeWindowTitle: "✦ Aurora 환영",
+    helloUser: "안녕하세요, User.",
+    welcomeDesktop: "AuroraOS 데스크톱에 오신 것을 환영합니다.",
+    dragInstruction: "상단 바를 드래그해 창을 이동하세요.",
+    selectApplication: "시작할 앱을 선택하세요.",
+
+    settingsTitle: "⚙️ 설정",
+    wallpaper: "배경화면",
+    auroraBlue: "🌌 오로라 블루",
+    auroraPurple: "💜 오로라 퍼플",
+    midnight: "🌙 미드나이트",
+    sunset: "🌅 선셋",
+    language: "언어",
+
+    journalTitle: "📖 Aurora 일기장",
+    welcome: "환영",
+    myGoals: "나의 목표",
+    favoriteThings: "좋아하는 것",
+    july2026: "2026년 7월",
+    journalWelcomeTitle: "환영합니다, User.",
+    journalIntro:
+      "Aurora 일기장은 생각과 아이디어, 추억을 기록하는 조용한 공간입니다.",
+    journalQuote:
+      "작은 아이디어가 밝은 가능성이 될 수 있습니다.",
+    journalInstruction:
+      "왼쪽 항목을 선택해 더 읽어보세요.",
+
+    weatherTitle: "🌤️ 날씨",
+    currentLocation: "현재 위치",
+    findingLocation: "현재 위치를 찾는 중...",
+    loadingDate: "날짜 불러오는 중...",
+    loadingWeather: "현재 날씨 불러오는 중...",
+    feelsLike: "체감 온도",
+    humidity: "습도",
+    wind: "바람",
+    sunrise: "🌅 일출",
+    sunsetTime: "🌇 일몰",
+    nextFiveHours: "앞으로 5시간",
+    loadingForecast: "예보 불러오는 중...",
+    refreshWeather: "날씨 새로고침"
+  },
+
+  es: {
+    bootInitializing: "Iniciando AuroraOS...",
+    enterDesktop: "Entrar al escritorio",
+    loadingTime: "Cargando hora...",
+    welcomeUser: "Bienvenido, User",
+
+    journal: "Diario Aurora",
+    settings: "Configuración",
+    weather: "Clima",
+
+    welcomeWindowTitle: "✦ Bienvenida de Aurora",
+    helloUser: "Hola, User.",
+    welcomeDesktop: "Bienvenido al escritorio de AuroraOS.",
+    dragInstruction: "Arrastra la barra superior para mover esta ventana.",
+    selectApplication: "Selecciona una aplicación para comenzar.",
+
+    settingsTitle: "⚙️ Configuración",
+    wallpaper: "Fondo de pantalla",
+    auroraBlue: "🌌 Aurora Azul",
+    auroraPurple: "💜 Aurora Morado",
+    midnight: "🌙 Medianoche",
+    sunset: "🌅 Atardecer",
+    language: "Idioma",
+
+    journalTitle: "📖 Diario Aurora",
+    welcome: "Bienvenida",
+    myGoals: "Mis metas",
+    favoriteThings: "Cosas favoritas",
+    july2026: "Julio de 2026",
+    journalWelcomeTitle: "Bienvenido, User.",
+    journalIntro:
+      "Aurora Journal es un espacio tranquilo para tus pensamientos, ideas y recuerdos.",
+    journalQuote:
+      "Las pequeñas ideas pueden convertirse en posibilidades brillantes.",
+    journalInstruction:
+      "Selecciona una entrada de la izquierda para leer más.",
+
+    weatherTitle: "🌤️ Clima",
+    currentLocation: "Ubicación actual",
+    findingLocation: "Buscando tu ubicación...",
+    loadingDate: "Cargando fecha...",
+    loadingWeather: "Cargando el clima actual...",
+    feelsLike: "Sensación térmica",
+    humidity: "Humedad",
+    wind: "Viento",
+    sunrise: "🌅 Amanecer",
+    sunsetTime: "🌇 Atardecer",
+    nextFiveHours: "Próximas 5 horas",
+    loadingForecast: "Cargando pronóstico...",
+    refreshWeather: "Actualizar clima"
+  },
+
+  hi: {
+    bootInitializing: "AuroraOS शुरू हो रहा है...",
+    enterDesktop: "डेस्कटॉप में प्रवेश करें",
+    loadingTime: "समय लोड हो रहा है...",
+    welcomeUser: "स्वागत है, User",
+
+    journal: "Aurora जर्नल",
+    settings: "सेटिंग्स",
+    weather: "मौसम",
+
+    welcomeWindowTitle: "✦ Aurora स्वागत",
+    helloUser: "नमस्ते, User.",
+    welcomeDesktop: "AuroraOS डेस्कटॉप में आपका स्वागत है।",
+    dragInstruction: "इस विंडो को स्थानांतरित करने के लिए शीर्ष बार खींचें।",
+    selectApplication: "शुरू करने के लिए एक ऐप चुनें।",
+
+    settingsTitle: "⚙️ सेटिंग्स",
+    wallpaper: "वॉलपेपर",
+    auroraBlue: "🌌 Aurora ब्लू",
+    auroraPurple: "💜 Aurora पर्पल",
+    midnight: "🌙 मिडनाइट",
+    sunset: "🌅 सनसेट",
+    language: "भाषा",
+
+    journalTitle: "📖 Aurora जर्नल",
+    welcome: "स्वागत",
+    myGoals: "मेरे लक्ष्य",
+    favoriteThings: "पसंदीदा चीजें",
+    july2026: "जुलाई 2026",
+    journalWelcomeTitle: "स्वागत है, User.",
+    journalIntro:
+      "Aurora Journal आपके विचारों, आइडिया और यादों के लिए एक शांत स्थान है।",
+    journalQuote:
+      "छोटे विचार उज्ज्वल संभावनाएँ बन सकते हैं।",
+    journalInstruction:
+      "और पढ़ने के लिए बाईं ओर से एक प्रविष्टि चुनें।",
+
+    weatherTitle: "🌤️ मौसम",
+    currentLocation: "वर्तमान स्थान",
+    findingLocation: "आपका स्थान खोजा जा रहा है...",
+    loadingDate: "तारीख लोड हो रही है...",
+    loadingWeather: "वर्तमान मौसम लोड हो रहा है...",
+    feelsLike: "महसूस होता है",
+    humidity: "नमी",
+    wind: "हवा",
+    sunrise: "🌅 सूर्योदय",
+    sunsetTime: "🌇 सूर्यास्त",
+    nextFiveHours: "अगले 5 घंटे",
+    loadingForecast: "पूर्वानुमान लोड हो रहा है...",
+    refreshWeather: "मौसम रीफ़्रेश करें"
+  }
+};
+
+function applyLanguage(language) {
+  const selectedTranslations =
+    translations[language] || translations.en;
+
+  document
+    .querySelectorAll("[data-i18n]")
+    .forEach(function (element) {
+      const translationKey =
+        element.dataset.i18n;
+
+      const translatedText =
+        selectedTranslations[translationKey];
+
+      if (translatedText) {
+        element.textContent = translatedText;
+      }
+    });
+
+  document.documentElement.lang = language;
+
+  localStorage.setItem(
+    "auroraLanguage",
+    language
+  );
+}
+
+languageButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const language = button.dataset.language;
+
+    applyLanguage(language);
+
+    languageButtons.forEach(function (item) {
+      item.classList.remove("active-language");
+    });
+
+    button.classList.add("active-language");
+  });
+});
+
 function playBootSound() {
     const audioContext =
         new (window.AudioContext || window.webkitAudioContext)();
@@ -1078,6 +1331,18 @@ document.querySelectorAll(".app-window").forEach(function (windowElement) {
     windowElement.classList.remove("window-opening");
   });
 });
+
+const savedLanguage =
+  localStorage.getItem("auroraLanguage") || "en";
+
+languageButtons.forEach(function (button) {
+  button.classList.toggle(
+    "active-language",
+    button.dataset.language === savedLanguage
+  );
+});
+
+applyLanguage(savedLanguage);
 
 updateTime();
 

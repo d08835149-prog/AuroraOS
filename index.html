@@ -31,10 +31,11 @@
       <h1>AuroraOS</h1>
 
       <p
-    class="welcome-text"
-    id="bootStatus"
+  class="welcome-text"
+  id="bootStatus"
+  data-i18n="bootInitializing"
 >
-    Initializing AuroraOS...
+  Initializing AuroraOS...
 </p>
 
 <div class="boot-bar">
@@ -54,14 +55,14 @@
 </p>
 
 <button
-    class="enter-button"
-    id="enterDesktopButton"
-    type="button"
-    style="display:none;"
+  class="enter-button"
+  id="enterDesktopButton"
+  type="button"
+  style="display:none;"
+  data-i18n="enterDesktop"
 >
-    Enter Desktop
-
-      </button>
+  Enter Desktop
+</button>
 
     </div>
 
@@ -86,13 +87,18 @@
         ✦ AuroraOS
       </button>
 
-      <div class="top-center">
+      <div
+        class="top-center"
+        data-i18n="welcomeUser"
+        >
         Welcome, User
-      </div>
-
-      <p id="timeElement">
+        </div>
+      <p
+         id="timeElement"
+         data-i18n="loadingTime"
+        >
         Loading time...
-      </p>
+        </p>
 
     </header>
 
@@ -111,8 +117,11 @@
             📖
         </span>
 
-        <span class="icon-name">
-            Aurora Journal
+        <span
+        class="icon-name"
+        data-i18n="journal"
+        >
+        Aurora Journal
         </span>
         </button>
 
@@ -128,8 +137,11 @@
             ⚙️
         </span>
 
-        <span class="icon-name">
-            Settings
+        <span
+        class="icon-name"
+        data-i18n="settings"
+        >
+        Settings
         </span>
         </button>
 
@@ -142,9 +154,12 @@
     🌤️
   </span>
 
-  <span class="icon-name">
-    Weather
-  </span>
+  <span
+  class="icon-name"
+  data-i18n="weather"
+    >
+  Weather
+</span>
 </button>
     </main>
 
@@ -165,8 +180,11 @@
         id="welcomeWindowHeader"
       >
 
-        <div class="window-title">
-          ✦ Aurora Welcome
+       <div
+        class="window-title"
+        data-i18n="welcomeWindowTitle"
+        >
+        ✦ Aurora Welcome
         </div>
 
         <button
@@ -185,18 +203,20 @@
 
       <div class="window-content">
 
-        <h2>Hello, User.</h2>
+        <h2 data-i18n="helloUser">
+        Hello, User.
+        </h2>
 
-        <p>
-          Welcome to your AuroraOS desktop.
+        <p data-i18n="welcomeDesktop">
+        Welcome to your AuroraOS desktop.
         </p>
 
-        <p>
-          Drag the top bar to move this window.
+        <p data-i18n="dragInstruction">
+        Drag the top bar to move this window.
         </p>
 
-        <p>
-          Select an application to get started.
+        <p data-i18n="selectApplication">
+        Select an application to get started.
         </p>
 
       </div>
@@ -219,9 +239,12 @@
         id="settingsWindowHeader"
     >
 
-        <div class="window-title">
-            ⚙️ Settings
-        </div>
+<div
+  class="window-title"
+  data-i18n="settingsTitle"
+>
+  ⚙️ Settings
+</div>
 
         <button
             class="close-button"
@@ -235,23 +258,106 @@
 
     <div class="settings-content">
 
-        <h2>Wallpaper</h2>
+<h2 data-i18n="wallpaper">
+  Wallpaper
+</h2>
 
-        <button class="wallpaper-button" data-wallpaper="blue">
-            🌌 Aurora Blue
-        </button>
+        <button
+  class="wallpaper-button"
+  data-wallpaper="blue"
+  data-i18n="auroraBlue"
+>
+  🌌 Aurora Blue
+</button>
 
-        <button class="wallpaper-button" data-wallpaper="purple">
-            💜 Aurora Purple
-        </button>
+<button
+  class="wallpaper-button"
+  data-wallpaper="purple"
+  data-i18n="auroraPurple"
+>
+  💜 Aurora Purple
+</button>
 
-        <button class="wallpaper-button" data-wallpaper="midnight">
-            🌙 Midnight
-        </button>
+<button
+  class="wallpaper-button"
+  data-wallpaper="midnight"
+  data-i18n="midnight"
+>
+  🌙 Midnight
+</button>
 
-        <button class="wallpaper-button" data-wallpaper="sunset">
-            🌅 Sunset
-        </button>
+<button
+  class="wallpaper-button"
+  data-wallpaper="sunset"
+  data-i18n="sunset"
+>
+  🌅 Sunset
+</button>
+
+<h2 data-i18n="language">
+  Language
+</h2>
+
+        <div class="language-buttons">
+
+  <button
+    class="language-button active-language"
+    data-language="en"
+    type="button"
+  >
+    US English
+  </button>
+
+  <button
+    class="language-button"
+    data-language="ko"
+    type="button"
+  >
+    🇰🇷 한국어
+  </button>
+
+  <button
+    class="language-button"
+    data-language="es"
+    type="button"
+  >
+    🇪🇸 Español
+  </button>
+
+  <button
+    class="language-button"
+    data-language="hi"
+    type="button"
+  >
+    🇮🇳 हिन्दी
+  </button>
+
+</div>
+
+<div class="feedback-section">
+
+  <h2 data-i18n="translationFeedback">
+    Translation Feedback
+  </h2>
+
+  <p
+    class="feedback-description"
+    data-i18n="translationFeedbackDescription"
+  >
+    Found an incorrect or unnatural translation? Please let me know.
+    -d08835149@gmail.com-
+  </p>
+
+  <a
+    class="feedback-button"
+    id="translationFeedbackButton"
+    href="mailto:YOUR_EMAIL@example.com?subject=AuroraOS%20Translation%20Feedback"
+    data-i18n="reportTranslation"
+  >
+    ✉️ Report a translation issue
+  </a>
+
+</div>
 
     </div>
     <div class="resize-handle"></div>
@@ -271,8 +377,11 @@
     id="journalWindowHeader"
   >
 
-    <div class="window-title">
-      📖 Aurora Journal
+    <div
+    class="window-title"
+    data-i18n="journalTitle"
+    >
+    📖 Aurora Journal
     </div>
 
     <button
@@ -295,8 +404,12 @@
         data-entry="welcome"
         type="button"
         >
-        <strong>Welcome</strong>
-        <span>July 2026</span>
+        <strong data-i18n="welcome">
+        Welcome
+        </strong>
+        <span data-i18n="july2026">
+        July 2026
+        </span>
       </button>
 
       <button
@@ -304,8 +417,12 @@
         data-entry="goals"
         type="button"
         >
-        <strong>My Goals</strong>
-        <span>July 2026</span>
+        <strong data-i18n="myGoals">
+        My Goals
+        </strong>
+        <span data-i18n="july2026">
+        July 2026
+        </span>
       </button>
 
       <button
@@ -313,8 +430,12 @@
         data-entry="favorites"
         type="button"
         >
-        <strong>Favorite Things</strong>
-        <span>July 2026</span>
+        <strong data-i18n="favoriteThings">
+        Favorite Things
+        </strong>
+        <span data-i18n="july2026">
+        July 2026
+        </span>
       </button>
 
     </aside>
@@ -322,32 +443,36 @@
 <article class="journal-page">
 
   <p
-    class="journal-date"
-    id="journalDate"
-  >
-    July 2026
-  </p>
+  class="journal-date"
+  id="journalDate"
+  data-i18n="july2026"
+>
+  July 2026
+</p>
 
-  <h2 id="journalTitle">
-    Welcome, User.
-  </h2>
+<h2
+  id="journalTitle"
+  data-i18n="journalWelcomeTitle"
+>
+  Welcome, User.
+</h2>
 
   <div id="journalBody">
 
-    <p>
-      This is Aurora Journal, a quiet space for your thoughts,
-      ideas, and memories.
-    </p>
+  <p data-i18n="journalIntro">
+    This is Aurora Journal, a quiet space for your thoughts,
+    ideas, and memories.
+  </p>
 
-    <blockquote>
-      Small ideas can become bright possibilities.
-    </blockquote>
+  <blockquote data-i18n="journalQuote">
+    Small ideas can become bright possibilities.
+  </blockquote>
 
-    <p>
-      Select an entry from the left side to read more.
-    </p>
+  <p data-i18n="journalInstruction">
+    Select an entry from the left side to read more.
+  </p>
 
-  </div>
+</div>
 
 </article>
 
@@ -372,8 +497,11 @@
     class="window-header"
     id="weatherWindowHeader"
   >
-    <div class="window-title">
-      🌤️ Weather
+    <div
+    class="window-title"
+    data-i18n="weatherTitle"
+    >
+    🌤️ Weather
     </div>
 
     <button
@@ -388,19 +516,26 @@
 
   <div class="weather-content">
 
-    <p class="weather-label">
-      Current location
+    <p
+    class="weather-label"
+    data-i18n="currentLocation"
+    >
+    Current location
     </p>
 
-    <h2 id="weatherLocation">
-      Finding your location...
+    <h2
+    id="weatherLocation"
+    data-i18n="findingLocation"
+    >
+    Finding your location...
     </h2>
 
     <p
-      id="weatherDate"
-      class="weather-date"
+    id="weatherDate"
+    class="weather-date"
+    data-i18n="loadingDate"
     >
-      Loading date...
+    Loading date...
     </p>
 
     <div
@@ -418,10 +553,11 @@
     </p>
 
     <p
-      class="weather-description"
-      id="weatherDescription"
+    class="weather-description"
+    id="weatherDescription"
+    data-i18n="loadingWeather"
     >
-      Loading current weather...
+    Loading current weather...
     </p>
 
     <!-- Current weather details -->
@@ -429,17 +565,23 @@
     <div class="weather-details">
 
       <div class="weather-detail">
-        <span>Feels like</span>
+<span data-i18n="feelsLike">
+  Feels like
+</span>
         <strong id="weatherFeelsLike">--°</strong>
       </div>
 
       <div class="weather-detail">
-        <span>Humidity</span>
+<span data-i18n="humidity">
+  Humidity
+</span>
         <strong id="weatherHumidity">--%</strong>
       </div>
 
       <div class="weather-detail">
-        <span>Wind</span>
+<span data-i18n="wind">
+  Wind
+</span>
         <strong id="weatherWind">-- km/h</strong>
       </div>
 
@@ -450,12 +592,16 @@
     <div class="sun-details">
 
       <div class="sun-detail">
-        <span>🌅 Sunrise</span>
+        <span data-i18n="sunrise">
+  🌅 Sunrise
+</span>
         <strong id="weatherSunrise">--:--</strong>
       </div>
 
       <div class="sun-detail">
-        <span>🌇 Sunset</span>
+        <span data-i18n="sunsetTime">
+  🌇 Sunset
+</span>
         <strong id="weatherSunset">--:--</strong>
       </div>
 
@@ -465,14 +611,17 @@
 
     <div class="hourly-section">
 
-      <h3>Next 5 Hours</h3>
+      <h3 data-i18n="nextFiveHours">
+  Next 5 Hours
+</h3>
 
       <div
-        class="hourly-forecast"
-        id="hourlyForecast"
-      >
-        Loading forecast...
-      </div>
+  class="hourly-forecast"
+  id="hourlyForecast"
+  data-i18n="loadingForecast"
+>
+  Loading forecast...
+</div>
 
     </div>
 
@@ -481,13 +630,14 @@
       id="weatherUpdated"
     ></p>
 
-    <button
-      class="weather-refresh"
-      id="weatherRefresh"
-      type="button"
-    >
-      Refresh weather
-    </button>
+<button
+  class="weather-refresh"
+  id="weatherRefresh"
+  type="button"
+  data-i18n="refreshWeather"
+>
+  Refresh weather
+</button>
 
   </div>
 

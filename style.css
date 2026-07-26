@@ -837,3 +837,68 @@ h1{
   z-index: 1000;
   touch-action: none;
 }
+
+.language-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.language-button {
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: #eeeeee;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.language-button:hover {
+  transform: translateY(-2px);
+  background: #e2e2e2;
+}
+
+.language-button.active-language {
+  border-color: #6366f1;
+  background: #e8e7ff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.feedback-section {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.feedback-section h2 {
+  margin: 0 0 10px;
+}
+
+.feedback-description {
+  margin: 0 0 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.feedback-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6
+  );
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.feedback-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
